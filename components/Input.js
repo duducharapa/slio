@@ -1,26 +1,26 @@
 import React from 'react';
 import { TextInput, StyleSheet, View, Text } from 'react-native';
 
-function Input({ label }){
+function Input({ label, onChangeText, value, password = false }){
   return(
-    <View style={styles.container}>
-      <TextInput style={styles.input} placeholder={label} />
-    </View>
+    <TextInput
+      value={value} 
+      onChangeText={onChangeText} 
+      style={styles.input} 
+      placeholder={label} 
+      secureTextEntry={password}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    width: '90%',
-    display: 'flex',
-    alignItems: 'center',
-    margin: 5,
-  },
   input: {
     width: '100%',
     paddingVertical: 10,
     paddingHorizontal: 6,
     fontSize: 16,
+    margin: 5,
+    width: '90%'
   }
 });
 
