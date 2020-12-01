@@ -10,7 +10,9 @@ import Profile from './Profile';
 
 const Tab = createBottomTabNavigator();
 
-function HomeContainer(){
+function HomeContainer({navigation}){
+  const goBack = () => navigation.goBack();
+
   return(
     <Tab.Navigator
       initialRouteName="Home"
@@ -40,7 +42,7 @@ function HomeContainer(){
       <Tab.Screen name="Calendar" component={Calendar} options={{tabBarLabel: 'Calendário'}} />
       <Tab.Screen name="CreateProduct" component={CreateProduct} options={{tabBarLabel: 'Criar produto'}} />
       <Tab.Screen name="Categories" component={Categories} options={{tabBarLabel: 'Categorias'}} />
-      <Tab.Screen name="Profile" component={Profile} options={{tabBarLabel: 'Perfil'}} />
+      <Tab.Screen name="Profile" component={Profile} options={{tabBarLabel: 'Perfil'}} initialParams={{ goBack }} />
     </Tab.Navigator>
   );
 }
