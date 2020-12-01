@@ -17,11 +17,21 @@ function CreateProduct() {
   const [name, setName] = useState('Arroz Prato Fino');
 
   const registerProduct = () => {
-    alert('Produto registrado!');
-    setFabricatedDate(new Date());
-    setBuyDate(new Date());
-    setExpireDate(new Date());
-    setName('');
+    if(fabricatedDate.toDateString() === new Date().toDateString()){
+      alert('Data de fabricação não pode ser vazia!');
+    }else if(buyDate.toDateString() === new Date().toDateString()){
+      alert('Data de compra não pode ser vazia!');
+    }else if(expireDate.toDateString() === new Date().toDateString()){
+      alert('Data de validade não pode ser vazia!');
+    }else if(!name){
+      alert('Nome do produto não pode ser vazio');
+    }else{
+      alert('Produto registrado!');
+      setFabricatedDate(new Date());
+      setBuyDate(new Date());
+      setExpireDate(new Date());
+      setName('');
+    }
   }
 
   const changeFabricatedDate = (_, selectedDate) => {

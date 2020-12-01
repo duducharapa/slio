@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Image, Dimensions } from 'react-native';
 
+import Background from '../components/Background';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import logo from '../assets/slio-logo.png';
 
 const { width, height } = Dimensions.get('screen');
 
-function Register({ close }) {
+function Register({ navigation }) {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -71,7 +72,7 @@ function Register({ close }) {
       
       if(validated) {
         setActiveScreen(0);
-        return close();
+        return navigation.navigate('Login');
       }
     }else{
       setActiveScreen(activeScreen+step);
@@ -81,25 +82,18 @@ function Register({ close }) {
   useEffect(() => {}, [activeScreen]);
 
   return(
-    <View style={styles.container}>
-      <Image source={logo} style={{ width: width*0.355, height: height*0.2 }} />
+    <Background>
+      <Image source={logo} style={{ width: width*0.4, height: height*0.225 }} />
       {screens[activeScreen]}
       <View style={styles.formContainer}>
         <Button title={activeScreen === 2 ? "Concluir" : "Próximo"} color="#4CD288" onPress={() => changeScreen(1)} />
-        <Button title="Voltar" onPress={() => changeScreen(-1)} textColor="black" />
+        <Button title="Voltar" onPress={() => changeScreen(-1)} color="white" textColor="black" />
       </View>
-    </View>
+    </Background>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    backgroundColor: 'white',
-    width: '80%',
-    height: '80%',
-  },
   formContainer: {
     display: 'flex',
     width: '100%',

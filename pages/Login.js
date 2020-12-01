@@ -15,10 +15,9 @@ function Login({ navigation }) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [registerModal, setRegisterModal] = useState(false);
 
   const login = () => {
-    if(email === "A" && password === "A"){
+    if(email === "Admin" && password === "Admin"){
       navigation.navigate("HomeContainer");
     }else{
       alert('Email e senha incorretos');
@@ -28,7 +27,7 @@ function Login({ navigation }) {
   return (
     <>
       <Background>
-        <Image source={logo} style={{ width: width*0.41, height: height*0.23 }} />
+        <Image source={logo} style={{ width: width*0.4, height: height*0.225 }} />
         <View style={styles.subContainer}>
           <Input label="Email" value={email} onChangeText={text => setEmail(text)} />
           <Input label="Senha" value={password} onChangeText={text => setPassword(text)} password />
@@ -39,7 +38,7 @@ function Login({ navigation }) {
           </View>
           <View style={styles.linkRowContainer}>
             <Text style={styles.registrationLabel}>Ainda não tem cadastro?</Text>
-            <Link label="Corre aqui meu filho" onPress={() => setRegisterModal(true)} />
+            <Link label="Corre aqui meu filho" onPress={() => navigation.navigate('Register')} />
           </View>
         </View>
         <View style={styles.subContainer}>
@@ -48,14 +47,6 @@ function Login({ navigation }) {
           <Button title="Continuar com o Facebook" color="#395185" onPress={notImplementedYet} />
         </View>
       </Background>
-      <Modal 
-        animationType="fade" 
-        visible={registerModal} 
-        onRequestClose={() => setRegisterModal(false)}
-        transparent={true}
-      >
-        <Register close={() => setRegisterModal(false)} />
-      </Modal>
     </>
   );
 }

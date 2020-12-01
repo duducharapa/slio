@@ -23,9 +23,7 @@ function HomeContainer({navigation}){
           let iconName;
 
           if(route.name === 'Home'){
-            iconName = 'ios-home'
-          } else if(route.name === 'Calendar'){
-            iconName = 'ios-calendar';
+            iconName = 'ios-home';
           } else if(route.name === 'Categories'){
             iconName = 'ios-apps';
           } else if(route.name === 'CreateProduct'){
@@ -39,7 +37,6 @@ function HomeContainer({navigation}){
       })}
     >
       <Tab.Screen name="Home" component={Home} options={{tabBarLabel: 'Início'}} />
-      <Tab.Screen name="Calendar" component={Calendar} options={{tabBarLabel: 'Calendário'}} />
       <Tab.Screen name="CreateProduct" component={CreateProduct} options={{tabBarLabel: 'Criar produto'}} />
       <Tab.Screen name="Categories" component={Categories} options={{tabBarLabel: 'Categorias'}} />
       <Tab.Screen name="Profile" component={Profile} options={{tabBarLabel: 'Perfil'}} initialParams={{ goBack }} />

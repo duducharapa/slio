@@ -5,7 +5,7 @@ import { Picker } from '@react-native-picker/picker';
 import Background from '../components/Background';
 import Button from '../components/Button';
 import Input from '../components/Input';
-import profile from '../assets/profile.jpeg';
+import profile from '../assets/profile.jpg';
 
 const states = [
   'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo',
@@ -18,7 +18,7 @@ function Profile({ route }) {
   const { goBack } = route.params;
   
   const [notifications, setNotifications] = useState(true);
-  const [password, setPassword] = useState('A');
+  const [password, setPassword] = useState('dfhsgs@sjbs+');
   const [state, setState] = useState(states[5]);
 
   return(
@@ -27,12 +27,12 @@ function Profile({ route }) {
       centerContent={true}>
         <View style={[styles.container, {width: '100%'}]}>
           <Image style={styles.profilePic} source={profile} />
-          <Text style={[styles.usernameLabel,{ margin: 0, padding: 0 }]}>Admin</Text>
+          <Text style={[styles.usernameLabel,{ margin: 0, padding: 0 }]}>Anselmo</Text>
         </View>
         <View style={[styles.container, {width: '100%'}]}>
           <View style={[styles.container, styles.containerRow]}>
             <Text style={styles.label}>Email</Text>
-            <Text>admin@gmail.com</Text>
+            <Text>anselmo@gmail.com</Text>
           </View>
           <View style={[styles.container, {width: '100%'}]}>
             <View style={[styles.inputLabelView]}>
