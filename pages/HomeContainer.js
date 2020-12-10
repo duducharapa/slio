@@ -2,7 +2,6 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-import Calendar from './Calendar';
 import Categories from './Categories';
 import CreateProduct from './CreateProduct';
 import Home from './Home';

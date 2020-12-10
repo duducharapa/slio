@@ -9,7 +9,6 @@ function Home() {
   return(
     <Background>
       <ScrollView 
-        style={{marginHorizontal: 10}} 
         contentContainerStyle={styles.scrollContainer}
         showsVerticalScrollIndicator={false}
       >

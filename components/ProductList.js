@@ -37,10 +37,10 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     marginVertical: 20,
-    marginRight: 10,
   },
   sectionTitle: {
     fontSize: 20,
+    marginLeft: 9,
     color: '#4F4F4F',
     fontWeight: 'normal'
   }
